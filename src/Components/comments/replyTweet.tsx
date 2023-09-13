@@ -1,4 +1,5 @@
 import UserInformation from "../../Hooks/userInformation";
+import defaultUser from "../../assets/userDefault.png"
 
 export default function ReplyTweet() {
   const {firs_name,avatar} = UserInformation()
@@ -7,11 +8,22 @@ export default function ReplyTweet() {
       <article className="py-3 px-4 h-auto">
         <div className="grid grid-cols-[40px,1fr] mr-3 ">
           <div className="w-10 grid justify-items-center mr-3">
-            <img
+            {/* <img
             src={avatar}
               className="w-10 h-10 rounded-full 
             bg-black cursor-pointer"
-            />
+            /> */}
+             {avatar ? (
+                          <img
+                            src={avatar}
+                            alt=""
+                            className="w-[45px] h-[45px] rounded-full"
+                          />
+                      ) : (
+                        <div className="col-span-1 w-10 mr-3">
+                          <img src={defaultUser} alt="" />
+                        </div>
+                      )}
             <div className="relative">
               <div className="border-l-2 border-gray-400 absolute -left-[1px] -top-6 h-[72px]" />
             </div>
